@@ -1,0 +1,22 @@
+version: '3'
+services:
+  # db:
+  #   image: postgres
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: your_username
+  #     POSTGRES_PASSWORD: your_password
+  #     POSTGRES_DB: your_database
+  #   volumes:
+  #     - ./data:/var/lib/postgresql/data
+
+  web:
+    image: node:latest
+    container_name: node-server
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: sh -c 'yarn install && yarn dev'
