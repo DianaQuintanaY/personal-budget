@@ -7,7 +7,5 @@ app.get('/', (req,res) => {
   res.send('Hello world! nodemon working');
 })
 
-app.listen(PORT, () => {
-  console.log(`Listening in port  ${PORT}`)
-});
+export default app;
  
